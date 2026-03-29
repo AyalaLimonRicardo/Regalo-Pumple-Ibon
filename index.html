@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feliz Cumpleaños Ivonne </title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <div class="confetti-wrap" id="confetti"></div>
+
+  <main>
+
+    <header>
+      <span class="emoji-top"></span>
+      <h1>Feliz Cumpleaños<br><span>Ivonne</span></h1>
+      <p class="subtitle">Un regalito pequeño pero con mucho huevo </p>
+    </header>
+
+    <div class="gallina-container"></div>
+
+    <section class="card">
+      <h2> Para mi amiga Ibon</h2>
+      <p>
+        Eres una gran amiga que la verdad me hace muy feliz. Compartir memorias contigo
+        es bien divertido, siempre hay algo de qué reírnos o de qué hablar. Te quiero
+        mucho y espero que este día esté lleno de cosas bonitas, igual que tú.
+        ¡Feliz cumple, miss huevos! 
+      </p>
+      <span class="years-badge"> 13 años de amistad </span>
+    </section>
+
+    <h2 class="cupones-titulo"> Tus Cupones</h2>
+    <div class="cupones-grid">
+
+      <div class="cupon">
+        <span class="cupon-icon"></span>
+        <h3>Limpieza de PC</h3>
+        <p>Válido para limpiar tu petus (pc) cuando lo necesite. </p>
+        <span class="cupon-stamp">CANJEABLE</span>
+      </div>
+
+      <div class="cupon">
+        <span class="cupon-icon"></span>
+        <h3>Ramen de elección</h3>
+        <p>Buldak con su vida o su sky, tú eliges el sabor.</p>
+        <span class="cupon-stamp">CANJEABLE</span>
+      </div>
+
+      <div class="cupon">
+        <span class="cupon-icon"></span>
+        <h3>Body de tu elección</h3>
+        <p>Un body del que más te guste. Tú escoge, que hoy es tu día.</p>
+        <span class="cupon-stamp">CANJEABLE</span>
+      </div>
+
+    </div>
+
+    <footer>Hecho con  para Ivonne · Cumpleaños 2026</footer>
+
+  </main>
+
+  <script>
+    const wrap = document.getElementById('confetti');
+    const items = ['🐔','🐣','🥚','✨','🌟','💛','🐥'];
+    for (let i = 0; i < 40; i++) {
+      const d = document.createElement('div');
+      d.className = 'pluma';
+      d.textContent = items[Math.floor(Math.random() * items.length)];
+      d.style.cssText = `
+        left: ${Math.random() * 100}%;
+        font-size: ${0.8 + Math.random() * 1.2}rem;
+        animation-duration: ${4 + Math.random() * 6}s;
+        animation-delay: ${Math.random() * 7}s;
+      `;
+      wrap.appendChild(d);
+    }
+  </script>
+
+</body>
+</html>

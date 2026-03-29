@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #2b1d00;
+  color: #fff8e7;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Confetti de plumas ── */
+.confetti-wrap {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;
+}
+.pluma {
+  position: absolute;
+  font-size: 1.2rem;
+  opacity: 0;
+  animation: caer linear infinite;
+}
+@keyframes caer {
+  0%   { transform: translateY(-30px) rotate(0deg);   opacity: 1; }
+  100% { transform: translateY(110vh) rotate(540deg); opacity: 0; }
+}
+
+/* ── Layout ── */
+main {
+  position: relative; z-index: 1;
+  max-width: 720px; margin: 0 auto;
+  padding: 2rem 1.2rem 4rem;
+  display: flex; flex-direction: column; gap: 2.8rem;
+}
+
+/* ── Header ── */
+header {
+  text-align: center;
+  padding: 3rem 1rem 2.5rem;
+  background: linear-gradient(135deg, #3d2600 0%, #7a4a00 60%, #b36b00 100%);
+  border-radius: 24px;
+  border: 2px solid #f5c400;
+  box-shadow: 0 0 40px #f5c40055;
+}
+.emoji-top { font-size: 3rem; display: block; margin-bottom: .5rem; }
+header h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  color: #ffe066;
+  line-height: 1.2;
+  animation: shimmer 2.5s ease-in-out infinite;
+}
+header h1 span { color: #ffd700; }
+.subtitle {
+  margin-top: .8rem;
+  font-size: .95rem;
+  color: #f5c400;
+  font-weight: 300;
+  letter-spacing: .05em;
+}
+@keyframes shimmer {
+  0%, 100% { text-shadow: 0 0 20px #f5c40088; }
+  50%       { text-shadow: 0 0 40px #ffe066cc, 0 0 60px #f5c400aa; }
+}
+
+/* ── Gallina animada ── */
+.gallina-container {
+  text-align: center;
+  font-size: 5rem;
+  animation: bounce 1s ease-in-out infinite alternate;
+}
+@keyframes bounce {
+  from { transform: translateY(0px) rotate(-5deg); }
+  to   { transform: translateY(-12px) rotate(5deg); }
+}
+
+/* ── Tarjeta de mensaje ── */
+.card {
+  background: #3a2200;
+  border: 2px solid #f5c400;
+  border-radius: 20px;
+  padding: 2rem 1.8rem;
+}
+.card h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.8rem;
+  color: #ffe066;
+  margin-bottom: 1rem;
+}
+.card p {
+  font-size: .97rem;
+  line-height: 1.8;
+  color: #fde9a0;
+  font-weight: 300;
+}
+.years-badge {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding: .4rem 1.2rem;
+  background: linear-gradient(90deg, #c47f00, #f5c400);
+  border-radius: 999px;
+  font-size: .85rem;
+  font-weight: 600;
+  color: #2b1d00;
+  letter-spacing: .04em;
+}
+
+/* ── Cupones ── */
+.cupones-titulo {
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  color: #ffe066;
+}
+.cupones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.2rem;
+}
+.cupon {
+  background: #2b1d00;
+  border: 2px dashed #f5c400;
+  border-radius: 16px;
+  padding: 1.4rem 1.4rem 1.2rem;
+  position: relative;
+  transition: transform .2s, box-shadow .2s;
+}
+.cupon:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px #f5c40033;
+}
+.cupon::before, .cupon::after {
+  content: '';
+  position: absolute;
+  width: 18px; height: 18px;
+  background: #2b1d00;
+  border-radius: 50%;
+  top: 50%; transform: translateY(-50%);
+  border: 2px dashed #f5c400;
+}
+.cupon::before { left: -11px; }
+.cupon::after  { right: -11px; }
+
+.cupon-icon { font-size: 2rem; margin-bottom: .5rem; display: block; }
+.cupon h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffe066;
+  margin-bottom: .4rem;
+}
+.cupon p {
+  font-size: .87rem;
+  color: #fde9a0;
+  font-weight: 300;
+  line-height: 1.6;
+}
+.cupon-stamp {
+  margin-top: .9rem;
+  display: inline-block;
+  padding: .25rem .9rem;
+  border: 1px solid #f5c400;
+  border-radius: 999px;
+  font-size: .75rem;
+  color: #f5c400;
+  letter-spacing: .06em;
+}
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  font-size: .8rem;
+  color: #8a6a00;
+  padding-top: 1rem;
+}
